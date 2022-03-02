@@ -102,16 +102,10 @@ const handleHover = function(e){
 navbar.addEventListener("mouseover",handleHover.bind(0.5))
 navbar.addEventListener("mouseout", handleHover.bind(1))
 
-// window.addEventListener("scroll",function(){
-    
-//     if(this.window.scrollY > 1000){
-//         navbar.classList.add("sticky-navbar")
-//     }else{
-//         navbar.classList.remove("sticky-navbar")
-//     }
-// })
+// sticky navigation using Intersection Oberver API
 const navbarHeight = navbar.getBoundingClientRect().height;
 
+//callback function for headerObserver
 const observerCallback = function(entry) {
     const header = entry[0]
     console.log(header);
@@ -121,6 +115,8 @@ const observerCallback = function(entry) {
         navbar.classList.remove("sticky-navbar")
     }
 }
+
+// option for headerObserver
 const observerOption = {
     root: null,
     threshold : 0,
