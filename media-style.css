@@ -47,7 +47,7 @@
         text-align: left;
         flex-direction: column;
     }
-    header,section{
+    section{
         padding: 0 1em;
     }
 
@@ -432,17 +432,16 @@
 @media(min-width:115em){
     .navbar{
         padding: 0 2em 0 2em;
+        
     }
+
     .title{
         width: 100%;
         font-size: 3.2;
     }
     .main-container{
-        /* background-color: burlywood; */
         width: 65%;
         grid-template-columns: 3fr 2.3fr;
-        /* margin: 10rem auto;
-        margin-top: 12rem; */
         margin-bottom: 14rem;
     }
     .nav-link2{

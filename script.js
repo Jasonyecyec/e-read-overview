@@ -11,6 +11,7 @@ const operationDescription = document.querySelector(".operation-description");
 const learnMore = document.querySelector(".learn-more");
 const navigationParent = document.querySelector(".nav-link2");
 const navbar = document.querySelector(".navbar");
+const header = document.querySelector("header")
 
 //if menu(burger) is clicked, it will toggle and show nav
 menu.addEventListener('click', function () {
@@ -100,3 +101,31 @@ const handleHover = function(e){
 // use bind to return new function and pass an object/value 
 navbar.addEventListener("mouseover",handleHover.bind(0.5))
 navbar.addEventListener("mouseout", handleHover.bind(1))
+
+// window.addEventListener("scroll",function(){
+    
+//     if(this.window.scrollY > 1000){
+//         navbar.classList.add("sticky-navbar")
+//     }else{
+//         navbar.classList.remove("sticky-navbar")
+//     }
+// })
+const navbarHeight = navbar.getBoundingClientRect().height;
+
+const observerCallback = function(entry) {
+    const header = entry[0]
+    console.log(header);
+    if(header.isIntersecting !== true){
+        navbar.classList.add("sticky-navbar")
+    }else{
+        navbar.classList.remove("sticky-navbar")
+    }
+}
+const observerOption = {
+    root: null,
+    threshold : 0,
+    rootMargin: `${navbarHeight}px`,
+}
+
+const headerObserver = new IntersectionObserver(observerCallback,observerOption)
+headerObserver.observe(header)

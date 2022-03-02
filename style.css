@@ -25,13 +25,16 @@ body{
     font-weight: 500;
     
 }
+
 .navbar{
-    padding: 0;
+    padding: 0 1em;
     display: flex;
     justify-content: space-between;
     padding-right: 0.5em;
     width: 100%;
     min-height: 5rem;
+    z-index: 1;
+    transition:300ms ease-in-out;
     /* background-color: aquamarine; */
     /* position: fixed; */
     /* top: 0; */
@@ -337,4 +340,12 @@ hr{
     color: rgb(197, 194, 194);
 }
 
-/* OPERATION BUTTON UP WHEN CLICK */
+/* JAVASCRIPT OPERATION */
+
+.sticky-navbar{
+        background-color: white;         
+         /* opacity: 0.9; */
+        position: fixed;
+        top: 0;     
+        /* z-index: 1;   */
+}
